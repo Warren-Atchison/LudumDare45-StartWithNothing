@@ -12,11 +12,24 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     Dictionary<string, KeyCode> unlockedKeys;
 
+    AudioController ac;
+
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        unlockedKeys = SceneHandler.playerKeys;
+        ac = GameObject.Find("AudioController").GetComponent<AudioController>();
+    }
+
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().name.Equals("TestScene"))
+        {
+            unlockedKeys = new Dictionary<string, KeyCode>();
+            Cheat();
+        }
+        else
+            unlockedKeys = SceneHandler.playerKeys;
     }
 
     // Update is called once per frame
@@ -51,7 +64,23 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f), new Vector2(transform.position.x + 0.5f, transform.position.y + 0.51f), groundLayers);
 
         if (isGrounded)
+        {
             rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
-        
+            ac.Play("Jump");
+        }
+    }
+
+    private void Cheat()
+    {
+        Debug.Log("ADDING ALL KEYS TO OPTIONS! TEST SCENE ACTIVE!");
+
+        if (!unlockedKeys.ContainsKey("Spacebar"))
+            unlockedKeys.Add("Spacebar", KeyCode.Space);
+
+        if (!unlockedKeys.ContainsKey("A"))
+            unlockedKeys.Add("A", KeyCode.A);
+
+        if (!unlockedKeys.ContainsKey("D"))
+            unlockedKeys.Add("D", KeyCode.D);
     }
 }
