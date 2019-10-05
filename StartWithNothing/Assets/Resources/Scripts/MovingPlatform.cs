@@ -66,4 +66,12 @@ public class MovingPlatform : MonoBehaviour
         deltaX = (NewX - wall.position.x) / (10000 / PlatformSpeed);
         deltaY = (NewY - wall.position.y) / (10000 / PlatformSpeed);
     }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        col.transform.parent = transform;
+    }
+    void OnTriggerExit2D(Collider2D col)
+    {
+        col.transform.parent = null;
+    }
 }

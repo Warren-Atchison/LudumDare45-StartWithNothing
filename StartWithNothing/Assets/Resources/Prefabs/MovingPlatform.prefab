@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5102240249992983589}
   - component: {fileID: 5306519135719627715}
   - component: {fileID: 6808368905035125124}
+  - component: {fileID: 4336947126856432013}
   m_Layer: 0
   m_Name: MovingPlatform
   m_TagString: Untagged
@@ -146,3 +147,29 @@ MonoBehaviour:
   NewY: 0
   DelayBetweenMoves: 0
   PlatformSpeed: 20
+--- !u!61 &4336947126856432013
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7621922506850538384}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.175}
+  m_SpriteTilingProperty:
+    border: {x: 0.04, y: 0.04, z: 0.04, w: 0.04}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.18}
+    newSize: {x: 1, y: 0.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 2
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.1}
+  m_EdgeRadius: 0
