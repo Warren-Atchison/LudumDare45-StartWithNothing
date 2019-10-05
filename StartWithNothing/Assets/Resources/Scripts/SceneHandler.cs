@@ -18,7 +18,7 @@ public class SceneHandler : MonoBehaviour
 
     private void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 
     public void ChangeScenes(string newScene)

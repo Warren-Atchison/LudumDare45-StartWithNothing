@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CannonLauncher : MonoBehaviour
 {
-    public GameObject cannonball;
-
+    public GameObject Cannonball;
+    public float SecondsBetweenShots;
 
     // Start is called before the first frame update
     void Start()
@@ -16,22 +16,19 @@ public class CannonLauncher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("t"))
-        {
-            CreateCannonball();
-        }
+
     }
 
-    IEnumerable FireCannon()
+    IEnumerator FireCannon()
     {
         while (true)
         {
             CreateCannonball();
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(SecondsBetweenShots);
         }
     }
     void CreateCannonball()
     {
-        Instantiate(cannonball);
+        Instantiate(Cannonball, gameObject.transform.position, Quaternion.identity);
     }
 }

@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     Dictionary<string, KeyCode> unlockedKeys;
 
     AudioController ac;
-
+    Vector3 spawn;
 
     private void Awake()
     {
@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
         }
         else
             unlockedKeys = SceneHandler.playerKeys;
+
+        spawn = gameObject.transform.position;
     }
 
     // Update is called once per frame
@@ -41,6 +43,7 @@ public class PlayerController : MonoBehaviour
         if ((unlockedKeys.ContainsKey("A") && Input.GetKey(KeyCode.A)) || (unlockedKeys.ContainsKey("D") && Input.GetKey(KeyCode.D)))
             rb.velocity = computeVelocity(Input.GetAxis("Horizontal"));
 
+        CheckBoundaries();
     }
 
     public void AddKey(string keyName, KeyCode key)
@@ -82,5 +85,34 @@ public class PlayerController : MonoBehaviour
 
         if (!unlockedKeys.ContainsKey("D"))
             unlockedKeys.Add("D", KeyCode.D);
+    }
+
+    private void CheckBoundaries()
+    {
+        Vector3 worldView = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
+
+        if (gameObject.transform.position.y < Camera.main.ScreenToWorldPoint(Vector3.zero).y ||
+            gameObject.transform.position.y > Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0f)).y)
+            Wraparound('y');
+        if (gameObject.transform.position.x < Camera.main.ScreenToWorldPoint(Vector3.zero).x ||
+                 gameObject.transform.position.x > Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0f)).x)
+            Wraparound('x');
+    }
+
+    public void Die()
+    {
+        Debug.Log("YOU DONE DIED!");
+
+        gameObject.transform.position = spawn;
+        rb.velocity = Vector2.zero;
+        ac.Play("Death");
+    }
+
+    private void Wraparound(char toggle)
+    {
+        if(toggle == 'x')
+            gameObject.transform.position = new Vector3(-gameObject.transform.position.x, gameObject.transform.position.y, 0f);
+        if (toggle == 'y')
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, -gameObject.transform.position.y, 0f);
     }
 }
