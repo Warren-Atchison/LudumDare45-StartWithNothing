@@ -4,44 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ButtonHandler : MonoBehaviour
+public class SettingsMenu : MonoBehaviour
 {
-    GameObject menu;
-    GameObject settings;
+    GameObject startMenu;
+    GameObject settingsMenu;
+
     AudioController audioController;
     GameObject musicSlider;
     GameObject sfxSlider;
 
     void Awake()
     {
-        menu = GameObject.Find("Menu");
-        settings = GameObject.Find("Settings");
         audioController = FindObjectOfType<AudioController>();
         musicSlider = GameObject.Find("MusicSlider");
         sfxSlider = GameObject.Find("SFXSlider");
-    }
 
-    private void Start()
-    {
-        settings.SetActive(false);
-        DontDestroyOnLoad(settings);
-        //DontDestroyOnLoad(this);
-    }
-
-    public void PlayButton()
-    {
-        Debug.Log("PLAY!");
-    }
-
-    public void SettingsButton()
-    {
-        menu.SetActive(false);
-        settings.SetActive(true);
-    }
-
-    public void ExitButton()
-    {
-        Application.Quit();
+        startMenu = GameObject.Find("StartMenu");
+        settingsMenu = GameObject.Find("SettingsMenu");
     }
 
     public void BackButton()
@@ -50,9 +29,11 @@ public class ButtonHandler : MonoBehaviour
 
         if (sceneName.Equals("MainMenu"))
         {
-            menu.SetActive(true);
-            settings.SetActive(false);
+            startMenu.SetActive(true);
+            settingsMenu.SetActive(false);
         }
+        else
+            settingsMenu.SetActive(false);
     }
 
     public void MusicSlider()
