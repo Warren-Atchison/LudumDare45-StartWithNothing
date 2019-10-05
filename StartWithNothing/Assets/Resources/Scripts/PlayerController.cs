@@ -5,12 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 15f;
+    public float moveSpeed;
+    public float jumpPower;
+    public bool isGrounded;
+    public LayerMask groundLayers;
     private Rigidbody2D rb;
+
+    private Dictionary<string, KeyCode> unlockedKeys;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        unlockedKeys = new Dictionary<string, KeyCode>();
     }
 
 
@@ -21,24 +27,41 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !SceneManager.GetActiveScene().name.Equals("MainMenu"))
             GameObject.Find("SettingsMenu").GetComponent<MainMenu>().SettingsButton();
 
+        if (unlockedKeys.ContainsKey("Spacebar") && Input.GetKeyDown(KeyCode.Space))
+            Jump();
+
         rb.velocity = computeVelocity();
+    }
+
+    public void AddKey(string keyName, KeyCode key)
+    {
+        unlockedKeys.Add(keyName, key);
     }
 
 
     Vector2 computeVelocity()
     {
-        Vector2 move = Vector2.zero;
+        Vector2 move = rb.velocity;
 
         move.x = Input.GetAxis("Horizontal");
 
-        Vector2 targetVelocity = moveSpeed * move;
+        move.x *= moveSpeed;
 
-        return targetVelocity;
+        return move;
     }
 
+    private void Jump()
+    {
+        // isGrounded?
+        isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f), new Vector2(transform.position.x + 0.5f, transform.position.y + 0.51f), groundLayers);
+
+        if (isGrounded)
+            rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+        
+    }
 }
