@@ -10,28 +10,18 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     public LayerMask groundLayers;
     private Rigidbody2D rb;
+    Dictionary<string, KeyCode> unlockedKeys;
 
-    private Dictionary<string, KeyCode> unlockedKeys;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        unlockedKeys = new Dictionary<string, KeyCode>();
-    }
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        unlockedKeys = SceneHandler.playerKeys;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !SceneManager.GetActiveScene().name.Equals("MainMenu"))
-            SceneHandler.settingsMenu.SetActive(true);
-
         if (unlockedKeys.ContainsKey("Spacebar") && Input.GetKeyDown(KeyCode.Space))
             Jump();
 

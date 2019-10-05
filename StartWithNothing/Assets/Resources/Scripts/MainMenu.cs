@@ -21,7 +21,6 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         settings.SetActive(false);
-        DontDestroyOnLoad(settings);
     }
 
     public void PlayButton()
@@ -45,7 +44,6 @@ public class MainMenu : MonoBehaviour
 
     public void ExitButton()
     {
-        
         bouncingCube.GetComponent<Rigidbody2D>().gravityScale = 10;
         bouncingCube.GetComponent<BouncingCube>().jumpPower = 100;
         bouncingCube.GetComponent<SpriteRenderer>().color = new Color(1f, 0.3725f, 0.3725f, 1f);
@@ -54,7 +52,7 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator Exit()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.8f);
         Application.Quit();
     }
 }

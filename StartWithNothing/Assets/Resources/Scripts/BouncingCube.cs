@@ -24,6 +24,7 @@ public class BouncingCube : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        MainMenu.StartGame();
+        if(!gameObject.GetComponent<SpriteRenderer>().color.Equals(new Color(1f, 0.3725f, 0.3725f, 1f)))
+            MainMenu.StartGame();
     }
 }
