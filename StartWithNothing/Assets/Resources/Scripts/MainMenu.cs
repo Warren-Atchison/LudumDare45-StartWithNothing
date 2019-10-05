@@ -8,11 +8,14 @@ public class MainMenu : MonoBehaviour
 {
     GameObject menu;
     GameObject settings;
+    GameObject bouncingCube;
 
     void Awake()
     {
         menu = GameObject.Find("StartMenu");
         settings = GameObject.Find("SettingsMenu");
+
+        bouncingCube = GameObject.Find("BouncingCube");
     }
 
     private void Start()
@@ -27,8 +30,11 @@ public class MainMenu : MonoBehaviour
         Rigidbody2D platform = GameObject.Find("Platform").GetComponent<Rigidbody2D>();
         platform.bodyType = RigidbodyType2D.Dynamic;
         platform.gravityScale = 4;
+    }
 
-        
+    public static void StartGame()
+    {
+        GameObject.Find("SceneHandler").GetComponent<SceneHandler>().ChangeScenes("Level1");
     }
 
     public void SettingsButton()
@@ -39,15 +45,16 @@ public class MainMenu : MonoBehaviour
 
     public void ExitButton()
     {
-        GameObject bouncingCube = GameObject.Find("BouncingCube");
-        bouncingCube.GetComponent<BouncingCube>().jumpPower = 80;
+        
+        bouncingCube.GetComponent<Rigidbody2D>().gravityScale = 10;
+        bouncingCube.GetComponent<BouncingCube>().jumpPower = 100;
         bouncingCube.GetComponent<SpriteRenderer>().color = new Color(1f, 0.3725f, 0.3725f, 1f);
         StartCoroutine("Exit");
-    } 
+    }
 
     IEnumerator Exit()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         Application.Quit();
     }
 }

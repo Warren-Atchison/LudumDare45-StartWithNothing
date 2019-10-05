@@ -30,11 +30,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !SceneManager.GetActiveScene().name.Equals("MainMenu"))
-            GameObject.Find("SettingsMenu").GetComponent<MainMenu>().SettingsButton();
+            SceneHandler.settingsMenu.SetActive(true);
 
         if (unlockedKeys.ContainsKey("Spacebar") && Input.GetKeyDown(KeyCode.Space))
             Jump();
-        else if ((unlockedKeys.ContainsKey("A") && Input.GetKey(KeyCode.A)) || (unlockedKeys.ContainsKey("D") && Input.GetKey(KeyCode.D)))
+
+        if ((unlockedKeys.ContainsKey("A") && Input.GetKey(KeyCode.A)) || (unlockedKeys.ContainsKey("D") && Input.GetKey(KeyCode.D)))
             rb.velocity = computeVelocity(Input.GetAxis("Horizontal"));
 
     }
