@@ -7,10 +7,12 @@ public class MovingPlatform : MonoBehaviour
     public float NewX, NewY;
     public float DelayBetweenMoves;
     public float PlatformSpeed = 100f;
+    public GameObject Player;
 
     private Transform wall;
     private float deltaX = 0f;
     private float deltaY = 0f;
+    
     void Awake()
     {
 
@@ -65,5 +67,18 @@ public class MovingPlatform : MonoBehaviour
     {
         deltaX = (NewX - wall.position.x) / (10000 / PlatformSpeed);
         deltaY = (NewY - wall.position.y) / (10000 / PlatformSpeed);
+    }
+
+    private void OnCollisionEnter2D(Collider other)
+    {
+
+            other.transform.parent = transform;
+        
+    }
+    private void OnCollisionExit2D(Collider other)
+    {
+
+            other.transform.parent = null;
+
     }
 }
