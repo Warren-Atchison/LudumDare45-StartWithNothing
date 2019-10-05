@@ -13,11 +13,11 @@ public class BouncingCube : MonoBehaviour
     private void Update()
     {
         // isGrounded?
-        isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f), new Vector2(transform.position.x + 0.5f, transform.position.y + 0.51f), groundLayers);
+        isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.3f, transform.position.y - 0.3f), new Vector2(transform.position.x + 0.3f, transform.position.y + 0.31f), groundLayers);
 
         if (isGrounded)
         {
-            rb.velocity = new Vector2(0f, 0f);
+            rb.velocity = Vector2.zero;
             rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
         }
     }

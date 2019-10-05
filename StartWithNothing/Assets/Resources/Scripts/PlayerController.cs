@@ -34,8 +34,9 @@ public class PlayerController : MonoBehaviour
 
         if (unlockedKeys.ContainsKey("Spacebar") && Input.GetKeyDown(KeyCode.Space))
             Jump();
+        else if ((unlockedKeys.ContainsKey("A") && Input.GetKey(KeyCode.A)) || (unlockedKeys.ContainsKey("D") && Input.GetKey(KeyCode.D)))
+            rb.velocity = computeVelocity(Input.GetAxis("Horizontal"));
 
-        rb.velocity = computeVelocity();
     }
 
     public void AddKey(string keyName, KeyCode key)
@@ -43,13 +44,11 @@ public class PlayerController : MonoBehaviour
         unlockedKeys.Add(keyName, key);
     }
 
-
-    Vector2 computeVelocity()
+    Vector2 computeVelocity(float axis = 0f)
     {
         Vector2 move = rb.velocity;
 
-        move.x = Input.GetAxis("Horizontal");
-
+        move.x = axis;
         move.x *= moveSpeed;
 
         return move;
