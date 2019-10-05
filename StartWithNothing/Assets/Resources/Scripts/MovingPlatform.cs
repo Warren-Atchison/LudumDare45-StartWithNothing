@@ -63,7 +63,7 @@ public class MovingPlatform : MonoBehaviour
     }
     void FindDelta()
     {
-        deltaX = (NewX - wall.position.x) / (1000 / PlatformSpeed);
-        deltaY = (NewY - wall.position.y) / (1000 / PlatformSpeed);
+        deltaX = (NewX - wall.position.x) / (10000 / PlatformSpeed);
+        deltaY = (NewY - wall.position.y) / (10000 / PlatformSpeed);
     }
 }
