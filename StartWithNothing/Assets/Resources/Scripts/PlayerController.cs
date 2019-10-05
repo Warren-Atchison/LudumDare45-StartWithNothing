@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     Dictionary<string, KeyCode> unlockedKeys;
 
     AudioController ac;
+    Vector3 spawn;
 
 
     private void Awake()
@@ -30,6 +31,8 @@ public class PlayerController : MonoBehaviour
         }
         else
             unlockedKeys = SceneHandler.playerKeys;
+
+        spawn = gameObject.transform.position;
     }
 
     // Update is called once per frame
@@ -82,5 +85,19 @@ public class PlayerController : MonoBehaviour
 
         if (!unlockedKeys.ContainsKey("D"))
             unlockedKeys.Add("D", KeyCode.D);
+    }
+
+    private void OnBecameInvisible()
+    {
+        Die();
+    }
+
+    private void Die()
+    {
+        Debug.Log("YOU DONE DIED!");
+
+        gameObject.transform.position = spawn;
+        rb.velocity = Vector2.zero;
+        ac.Play("Death");
     }
 }
