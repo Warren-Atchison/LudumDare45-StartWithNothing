@@ -39,6 +39,15 @@ public class MainMenu : MonoBehaviour
 
     public void ExitButton()
     {
-        Application.Quit();
+        GameObject bouncingCube = GameObject.Find("BouncingCube");
+        bouncingCube.GetComponent<BouncingCube>().jumpPower = 80;
+        bouncingCube.GetComponent<SpriteRenderer>().color = new Color(1f, 0.3725f, 0.3725f, 1f);
+        StartCoroutine("Exit");
     } 
+
+    IEnumerator Exit()
+    {
+        yield return new WaitForSeconds(3);
+        Application.Quit();
+    }
 }
