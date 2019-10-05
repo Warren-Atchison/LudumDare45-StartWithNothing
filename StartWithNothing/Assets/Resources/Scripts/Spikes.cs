@@ -10,6 +10,9 @@ public class Spikes : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        Debug.Log("ur ded");
+        if (collision.gameObject.name.Equals("Player"))
+            collision.gameObject.GetComponent<PlayerController>().Die();
+        else
+            Destroy(collision.gameObject);
     }
 }
