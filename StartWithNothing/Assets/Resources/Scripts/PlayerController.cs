@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     public Dictionary<string, KeyCode> unlockedKeys;
 
     AudioController ac;
-    Vector3 spawn;
 
     private void Awake()
     {
@@ -31,8 +30,6 @@ public class PlayerController : MonoBehaviour
         }
         else
             unlockedKeys = SceneHandler.playerKeys;
-
-        spawn = gameObject.transform.position;
     }
 
     // Update is called once per frame
@@ -115,7 +112,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die(string clipString = "Death")
     {
-        gameObject.transform.position = spawn;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         rb.velocity = Vector2.zero;
         ac.Play(clipString);
     }
