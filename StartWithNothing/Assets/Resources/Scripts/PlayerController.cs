@@ -49,8 +49,10 @@ public class PlayerController : MonoBehaviour
         if(unlockedKeys.ContainsKey("AirJump") && Input.GetKeyDown(KeyCode.Space))
             AirJump();
 
-        if ((unlockedKeys.ContainsKey("A") && Input.GetKey(KeyCode.A)) || (unlockedKeys.ContainsKey("D") && Input.GetKey(KeyCode.D)))
-            rb.velocity = computeVelocity(Input.GetAxis("Horizontal"));
+        if (unlockedKeys.ContainsKey("A") && Input.GetKey(KeyCode.A))
+            rb.velocity = computeVelocity(-1f);
+        if (unlockedKeys.ContainsKey("D") && Input.GetKey(KeyCode.D))
+            rb.velocity = computeVelocity(1f);
 
         CheckBoundaries();
     }
