@@ -5,7 +5,6 @@ using UnityEngine;
 public class HighGrav : MonoBehaviour
 {
     private GameObject player;
-    private PlayerController pc;
     private Rigidbody2D rb;
 
     void Start(){
