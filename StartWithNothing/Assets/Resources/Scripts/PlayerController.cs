@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
         }
         if (!isGrounded){
             if(airJumpCharges > 0){
+                rb.velocity = new Vector2(rb.velocity.x, 0f);
                 rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
                 ac.Play("Jump");
                 airJumpCharges--;
