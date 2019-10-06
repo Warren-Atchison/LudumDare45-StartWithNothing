@@ -21,4 +21,10 @@ public class BouncingCube : MonoBehaviour
             rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
         }
     }
+
+    private void OnBecameInvisible()
+    {
+        if(!gameObject.GetComponent<SpriteRenderer>().color.Equals(new Color(1f, 0.3725f, 0.3725f, 1f)))
+            MainMenu.StartGame();
+    }
 }

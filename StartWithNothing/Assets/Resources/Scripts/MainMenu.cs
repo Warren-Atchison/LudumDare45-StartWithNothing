@@ -8,14 +8,12 @@ public class MainMenu : MonoBehaviour
 {
     GameObject menu;
     GameObject settings;
-    GameObject levelSelect;
     GameObject bouncingCube;
 
     void Awake()
     {
         menu = GameObject.Find("StartMenu");
         settings = GameObject.Find("SettingsMenu");
-        levelSelect = GameObject.Find("LevelSelectMenu");
 
         bouncingCube = GameObject.Find("BouncingCube");
     }
@@ -23,7 +21,6 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         settings.SetActive(false);
-        levelSelect.SetActive(false);
     }
 
     public void PlayButton()
@@ -37,12 +34,6 @@ public class MainMenu : MonoBehaviour
     public static void StartGame()
     {
         GameObject.Find("SceneHandler").GetComponent<SceneHandler>().ChangeScenes("Level1");
-    }
-
-    public void LevelSelectButton()
-    {
-        levelSelect.SetActive(true);
-        menu.SetActive(false);
     }
 
     public void SettingsButton()

@@ -53,20 +53,6 @@ public class PlayerController : MonoBehaviour
         unlockedKeys.Add(keyName, key);
     }
 
-    private void Cheat()
-    {
-        Debug.Log("ADDING ALL KEYS TO OPTIONS! TEST SCENE ACTIVE!");
-
-        if (!unlockedKeys.ContainsKey("Spacebar"))
-            unlockedKeys.Add("Spacebar", KeyCode.Space);
-
-        if (!unlockedKeys.ContainsKey("A"))
-            unlockedKeys.Add("A", KeyCode.A);
-
-        if (!unlockedKeys.ContainsKey("D"))
-            unlockedKeys.Add("D", KeyCode.D);
-    }
-
     Vector2 computeVelocity(float axis = 0f)
     {
         Vector2 move = rb.velocity;
@@ -86,6 +72,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void Cheat()
+    {
+        Debug.Log("ADDING ALL KEYS TO OPTIONS! TEST SCENE ACTIVE!");
+
+        if (!unlockedKeys.ContainsKey("Spacebar"))
+            unlockedKeys.Add("Spacebar", KeyCode.Space);
+
+        if (!unlockedKeys.ContainsKey("A"))
+            unlockedKeys.Add("A", KeyCode.A);
+
+        if (!unlockedKeys.ContainsKey("D"))
+            unlockedKeys.Add("D", KeyCode.D);
+    }
+
     private void CheckBoundaries()
     {
         Vector3 worldView = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
@@ -98,11 +98,13 @@ public class PlayerController : MonoBehaviour
             Wraparound('x');
     }
 
-    public void Die(string clipString = "Death")
+    public void Die()
     {
+        Debug.Log("YOU DONE DIED!");
+
         gameObject.transform.position = spawn;
         rb.velocity = Vector2.zero;
-        ac.Play(clipString);
+        ac.Play("Death");
     }
 
     private void Wraparound(char toggle)
