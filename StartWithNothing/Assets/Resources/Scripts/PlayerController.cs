@@ -54,7 +54,6 @@ public class PlayerController : MonoBehaviour
         if (unlockedKeys.ContainsKey("D") && Input.GetKey(KeyCode.D))
             rb.velocity = computeVelocity(1f);
 
-        CheckBoundaries();
     }
 
     public void AddKey(string keyName, KeyCode key)
@@ -114,30 +113,10 @@ public class PlayerController : MonoBehaviour
             unlockedKeys.Add("D", KeyCode.D);
     }
 
-    private void CheckBoundaries()
-    {
-        Vector3 worldView = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
-
-        if (gameObject.transform.position.y < Camera.main.ScreenToWorldPoint(Vector3.zero).y ||
-            gameObject.transform.position.y > Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0f)).y)
-            Wraparound('y');
-        if (gameObject.transform.position.x < Camera.main.ScreenToWorldPoint(Vector3.zero).x ||
-                 gameObject.transform.position.x > Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0f)).x)
-            Wraparound('x');
-    }
-
     public void Die(string clipString = "Death")
     {
         gameObject.transform.position = spawn;
         rb.velocity = Vector2.zero;
         ac.Play(clipString);
-    }
-
-    private void Wraparound(char toggle)
-    {
-        if(toggle == 'x')
-            gameObject.transform.position = new Vector3(-gameObject.transform.position.x, gameObject.transform.position.y, 0f);
-        if (toggle == 'y')
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x, -gameObject.transform.position.y, 0f);
     }
 }
