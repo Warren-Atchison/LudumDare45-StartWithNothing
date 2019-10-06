@@ -98,14 +98,7 @@ public class PlayerController : MonoBehaviour
             Wraparound('x');
     }
 
-    public void Die()
-    {
-        gameObject.transform.position = spawn;
-        rb.velocity = Vector2.zero;
-        ac.Play("Death");
-    }
-
-    public void Die(string clipString)
+    public void Die(string clipString = "Death")
     {
         gameObject.transform.position = spawn;
         rb.velocity = Vector2.zero;
