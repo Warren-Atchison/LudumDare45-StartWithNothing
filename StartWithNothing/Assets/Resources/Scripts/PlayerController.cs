@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
     public float jumpPower;
-    public bool isGrounded;
+    public bool isGrounded, inWater = false;
+    public int airJumpCharges = 1;
     public LayerMask groundLayers;
     private Rigidbody2D rb;
     public Dictionary<string, KeyCode> unlockedKeys;
@@ -38,9 +39,15 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f), new Vector2(transform.position.x + 0.5f, transform.position.y + 0.51f), groundLayers);
+        if(isGrounded){
+            airJumpCharges = 1;
+        }
 
-        if (unlockedKeys.ContainsKey("Spacebar") && Input.GetKeyDown(KeyCode.Space))
-            Jump();
+        if (unlockedKeys.ContainsKey("GroundJump") && Input.GetKeyDown(KeyCode.Space))
+            GroundJump();
+
+        if(unlockedKeys.ContainsKey("AirJump") && Input.GetKeyDown(KeyCode.Space))
+            AirJump();
 
         if ((unlockedKeys.ContainsKey("A") && Input.GetKey(KeyCode.A)) || (unlockedKeys.ContainsKey("D") && Input.GetKey(KeyCode.D)))
             rb.velocity = computeVelocity(Input.GetAxis("Horizontal"));
@@ -63,7 +70,7 @@ public class PlayerController : MonoBehaviour
         return move;
     }
 
-    private void Jump()
+    private void GroundJump()
     {
         if (isGrounded)
         {
@@ -72,12 +79,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void AirJump(){
+        if(inWater){
+            return;
+        }
+        if (!isGrounded){
+            if(airJumpCharges > 0){
+                rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+                ac.Play("Jump");
+                airJumpCharges--;
+            }
+        }
+    }
+
     private void Cheat()
     {
         Debug.Log("ADDING ALL KEYS TO OPTIONS! TEST SCENE ACTIVE!");
 
-        if (!unlockedKeys.ContainsKey("Spacebar"))
-            unlockedKeys.Add("Spacebar", KeyCode.Space);
+        if (!unlockedKeys.ContainsKey("GroundJump"))
+            unlockedKeys.Add("GroundJump", KeyCode.Space);
+
+        if (!unlockedKeys.ContainsKey("AirJump"))
+            unlockedKeys.Add("AirJump", KeyCode.Space);
 
         if (!unlockedKeys.ContainsKey("A"))
             unlockedKeys.Add("A", KeyCode.A);

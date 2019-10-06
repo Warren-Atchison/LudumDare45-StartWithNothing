@@ -5,7 +5,6 @@ using UnityEngine;
 public class Water : MonoBehaviour
 {
     private GameObject player;
-    bool inWater;
     float defaultMoveSpeed, defaultJumpPower;
     private PlayerController pc;
     private Rigidbody2D rb;
@@ -19,8 +18,8 @@ public class Water : MonoBehaviour
     }
 
     void Update(){
-        if(inWater && !pc.isGrounded){
-            if(pc.unlockedKeys.ContainsKey("Spacebar") && Input.GetKeyDown(KeyCode.Space)){
+        if(pc.inWater && !pc.isGrounded){
+            if(pc.unlockedKeys.ContainsKey("Swim") && Input.GetKeyDown(KeyCode.Space)){
                 // If falling downwards
                 if(rb.velocity.y < 0){
                     rb.AddForce(Vector2.up * defaultJumpPower * .2f, ForceMode2D.Impulse);
@@ -33,7 +32,7 @@ public class Water : MonoBehaviour
         }
     }
     private void OnTriggerEnter2D(Collider2D collision){
-        inWater = true;
+        pc.inWater = true;
         rb.gravityScale = .2f;
         rb.velocity *= .5f;
         pc.jumpPower = defaultJumpPower/3;
@@ -41,7 +40,7 @@ public class Water : MonoBehaviour
     } 
 
     private void OnTriggerExit2D(Collider2D collision){
-        inWater = false;
+        pc.inWater = false;
         rb.gravityScale = 2;
         pc.jumpPower = defaultJumpPower;
         pc.moveSpeed = defaultMoveSpeed;
