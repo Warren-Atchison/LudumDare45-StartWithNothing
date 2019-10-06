@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     public LayerMask groundLayers;
     private Rigidbody2D rb;
-    Dictionary<string, KeyCode> unlockedKeys;
+    public Dictionary<string, KeyCode> unlockedKeys;
 
     AudioController ac;
     Vector3 spawn;
@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f), new Vector2(transform.position.x + 0.5f, transform.position.y + 0.51f), groundLayers);
+
         if (unlockedKeys.ContainsKey("Spacebar") && Input.GetKeyDown(KeyCode.Space))
             Jump();
 
@@ -63,9 +65,6 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        // isGrounded?
-        isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f), new Vector2(transform.position.x + 0.5f, transform.position.y + 0.51f), groundLayers);
-
         if (isGrounded)
         {
             rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
