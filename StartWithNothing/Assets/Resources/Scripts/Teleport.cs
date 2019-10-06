@@ -6,6 +6,7 @@ public class Teleport : MonoBehaviour
 {
 
     public GameObject teleportDestination;
+    public bool screenWrap = true;
 
     public enum Direction
     {
@@ -31,12 +32,26 @@ public class Teleport : MonoBehaviour
         {
             int xShift = (targetDirection == Direction.LEFT) ? -1 : 1;
             targetX = teleportDestination.transform.position.x + xShift * ((widthObjectToTeleport / 2) + (widthTeleportDestination / 2) + 0.03f);
-            targetY = teleportDestination.transform.position.y - (teleportDestination.GetComponent<BoxCollider2D>().bounds.size.y / 2) + (collision.bounds.size.y / 2);
+            if (!screenWrap)
+            {
+                targetY = teleportDestination.transform.position.y - (teleportDestination.GetComponent<BoxCollider2D>().bounds.size.y / 2) + (collision.bounds.size.y / 2);
+            }
+            else
+            {
+                targetY = objectToTeleport.transform.position.y;
+            }
         }   
         else
         {
             int yShift = (targetDirection == Direction.DOWN) ? -1 : 1;
-            targetX = teleportDestination.transform.position.x;
+            if (!screenWrap)
+            {
+                targetX = teleportDestination.transform.position.x;
+            }
+            else
+            {
+                targetX = objectToTeleport.transform.position.x;
+            }
             targetY = teleportDestination.transform.position.y + yShift * ((heightObjectToTeleport / 2) + (heightTeleportDestination / 2) + 0.03f);
         }
 
