@@ -7,7 +7,7 @@ public class Lava : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name.Equals("Player"))
-            collision.gameObject.GetComponent<PlayerController>().Die();
+            collision.gameObject.GetComponent<PlayerController>().Die("Lava");
         else
             Destroy(collision.gameObject);
     }
