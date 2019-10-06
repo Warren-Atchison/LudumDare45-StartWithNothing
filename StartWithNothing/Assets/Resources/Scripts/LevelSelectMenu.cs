@@ -21,6 +21,11 @@ public class LevelSelectMenu : MonoBehaviour
     public GameObject bottomLeftButton;
     public GameObject bottomRightButton;
 
+    public GameObject topLeftBlack;
+    public GameObject topRightBlack;
+    public GameObject bottomLeftBlack;
+    public GameObject bottomRightBlack;
+
     public GameObject leftArrow;
     public GameObject rightArrow;
 
@@ -86,19 +91,31 @@ public class LevelSelectMenu : MonoBehaviour
         {
             // Topleft
             if (levelNum % 4 == 0)
+            {
                 topLeftButton.SetActive(false);
+                topLeftBlack.SetActive(false);
+            }
 
             // Topright
             else if (levelNum % 4 == 1)
+            {
                 topRightButton.SetActive(false);
+                topRightBlack.SetActive(false);
+            }
 
             // Bottomleft
             else if (levelNum % 4 == 2)
+            {
                 bottomLeftButton.SetActive(false);
+                bottomLeftBlack.SetActive(false);
+            }
 
             // Bottomright
             else if (levelNum % 4 == 3)
+            {
                 bottomRightButton.SetActive(false);
+                bottomRightBlack.SetActive(false);
+            }
 
             return;
         }
@@ -110,6 +127,7 @@ public class LevelSelectMenu : MonoBehaviour
         if (levelNum % 4 == 0)
         {
             topLeftButton.SetActive(true);
+            topLeftBlack.SetActive(true);
 
             topLeftButton.GetComponentInChildren<Text>().text = "Level " + (levelNum + 1);
             topLeftButton.GetComponent<Image>().sprite = levelPics[levelNum];
@@ -120,6 +138,7 @@ public class LevelSelectMenu : MonoBehaviour
         if (levelNum % 4 == 1)
         {
             topRightButton.SetActive(true);
+            topRightBlack.SetActive(true);
 
             topRightButton.GetComponentInChildren<Text>().text = "Level " + (levelNum + 1);
             topRightButton.GetComponent<Image>().sprite = levelPics[levelNum];
@@ -130,6 +149,7 @@ public class LevelSelectMenu : MonoBehaviour
         if (levelNum % 4 == 2)
         {
             bottomLeftButton.SetActive(true);
+            bottomLeftBlack.SetActive(true);
 
             bottomLeftButton.GetComponentInChildren<Text>().text = "Level " + (levelNum + 1);
             bottomLeftButton.GetComponent<Image>().sprite = levelPics[levelNum];
@@ -141,6 +161,7 @@ public class LevelSelectMenu : MonoBehaviour
         if (levelNum % 4 == 3)
         {
             bottomRightButton.SetActive(true);
+            bottomRightBlack.SetActive(true);
 
             bottomRightButton.GetComponentInChildren<Text>().text = "Level " + (levelNum + 1);
             bottomRightButton.GetComponent<Image>().sprite = levelPics[levelNum];
