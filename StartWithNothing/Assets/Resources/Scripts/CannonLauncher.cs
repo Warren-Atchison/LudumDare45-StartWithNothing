@@ -6,6 +6,8 @@ public class CannonLauncher : MonoBehaviour
 {
     public GameObject Cannonball;
     public float SecondsBetweenShots;
+    public float ShotPowerX;
+    public float ShotPowerY;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,7 @@ public class CannonLauncher : MonoBehaviour
     }
     void CreateCannonball()
     {
-        Instantiate(Cannonball, gameObject.transform.position, Quaternion.identity);
+        var newProjectile = Instantiate(Cannonball, gameObject.transform.position, Quaternion.identity);
+        newProjectile.GetComponent<Rigidbody2D>().AddForce(new Vector2(ShotPowerX, ShotPowerY));
     }
 }

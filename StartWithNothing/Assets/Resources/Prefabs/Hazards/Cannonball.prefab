@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5749952583447744056}
   - component: {fileID: 4546076185702509925}
   - component: {fileID: -3936978888586834815}
+  - component: {fileID: 3769769007760055777}
   m_Layer: 0
   m_Name: Cannonball
   m_TagString: Untagged
@@ -114,7 +115,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.009, y: 0.006}
@@ -132,5 +133,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35d11df17a641034fab2b1dfbd53a03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShotSpeedX: 0
-  ShotSpeedY: 100
+--- !u!58 &3769769007760055777
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5427691970937497213}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.009, y: 0.006}
+  serializedVersion: 2
+  m_Radius: 0.11
