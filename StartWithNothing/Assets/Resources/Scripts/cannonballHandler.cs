@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CannonballHandler : MonoBehaviour
+public class cannonballHandler : MonoBehaviour
 {
     //public float ShotSpeedX;
     //public float ShotSpeedY;

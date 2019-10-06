@@ -93,5 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 304845418a62519478224c7161a7f365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cannonball: {fileID: 5427691970937497213, guid: 05a316760868be0438469a7bdf42361b,
-    type: 3}
+  Cannonball: {fileID: 0}
+  SecondsBetweenShots: 0
+  ShotPowerX: 0
+  ShotPowerY: 0
