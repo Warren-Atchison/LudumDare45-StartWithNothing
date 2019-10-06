@@ -641,6 +641,8 @@ MonoBehaviour:
   - Level2
   - Level3
   - Level4
+  - Level5
+  - Level6
 --- !u!1 &295868093
 GameObject:
   m_ObjectHideFlags: 0
