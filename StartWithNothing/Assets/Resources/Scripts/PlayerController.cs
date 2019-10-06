@@ -102,6 +102,9 @@ public class PlayerController : MonoBehaviour
         if (!unlockedKeys.ContainsKey("AirJump"))
             unlockedKeys.Add("AirJump", KeyCode.Space);
 
+        if (!unlockedKeys.ContainsKey("Swim"))
+            unlockedKeys.Add("Swim", KeyCode.Space);
+
         if (!unlockedKeys.ContainsKey("A"))
             unlockedKeys.Add("A", KeyCode.A);
 
@@ -121,13 +124,11 @@ public class PlayerController : MonoBehaviour
             Wraparound('x');
     }
 
-    public void Die()
+    public void Die(string clipString = "Death")
     {
-        Debug.Log("YOU DONE DIED!");
-
         gameObject.transform.position = spawn;
         rb.velocity = Vector2.zero;
-        ac.Play("Death");
+        ac.Play(clipString);
     }
 
     private void Wraparound(char toggle)

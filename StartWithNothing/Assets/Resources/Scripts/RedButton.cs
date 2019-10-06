@@ -5,7 +5,9 @@ using UnityEngine;
 public class RedButton : MonoBehaviour
 {
     public bool isPushed;
+    public bool oneUse;
     private bool safetytimer = false;
+    private bool hasBeenPushed = false;
 
     public Sprite pushedButton;
     public Sprite unpushedButton;
@@ -34,7 +36,7 @@ public class RedButton : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (safetytimer)
+        if (safetytimer || (oneUse && hasBeenPushed))
             return;
 
         if (isPushed)
@@ -54,6 +56,9 @@ public class RedButton : MonoBehaviour
             StartCoroutine("Timeout");
         }
 
+        if (oneUse)
+            hasBeenPushed = true;
+
         foreach(GameObject go in objectsToToggle)
             go.SetActive(!go.activeInHierarchy);
     }
@@ -61,7 +66,7 @@ public class RedButton : MonoBehaviour
     IEnumerator Timeout()
     {
         safetytimer = true;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.4f);
         safetytimer = false;
     }
 }

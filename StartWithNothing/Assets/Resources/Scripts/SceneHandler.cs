@@ -25,4 +25,16 @@ public class SceneHandler : MonoBehaviour
     {
         SceneManager.LoadScene(levels.IndexOf(newScene));
     }
+
+    public void AddKey(string keyName)
+    {
+        if (keyName.Equals("Spacebar") && !playerKeys.ContainsKey("Spacebar"))
+            playerKeys.Add("Spacebar", KeyCode.Space);
+
+        if (keyName.Equals("A") && !playerKeys.ContainsKey("A"))
+            playerKeys.Add("A", KeyCode.A);
+
+        if (keyName.Equals("D") && !playerKeys.ContainsKey("D"))
+            playerKeys.Add("D", KeyCode.D);
+    }
 }
