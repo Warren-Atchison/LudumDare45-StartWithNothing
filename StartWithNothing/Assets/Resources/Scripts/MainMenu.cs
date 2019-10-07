@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    GameObject menu;
-    GameObject settings;
-    GameObject levelSelect;
+    static GameObject menu;
+    static GameObject settings;
+    static GameObject levelSelect;
+    static GameObject credits;
+
     GameObject bouncingCube;
 
     void Awake()
@@ -16,6 +18,7 @@ public class MainMenu : MonoBehaviour
         menu = GameObject.Find("StartMenu");
         settings = GameObject.Find("SettingsMenu");
         levelSelect = GameObject.Find("LevelSelectMenu");
+        credits = GameObject.Find("CreditsMenu");
 
         bouncingCube = GameObject.Find("BouncingCube");
     }
@@ -24,6 +27,7 @@ public class MainMenu : MonoBehaviour
     {
         settings.SetActive(false);
         levelSelect.SetActive(false);
+        credits.SetActive(false);
     }
 
     public void PlayButton()
@@ -63,5 +67,17 @@ public class MainMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(0.8f);
         Application.Quit();
+    }
+
+    public void CreditsButton()
+    {
+        credits.SetActive(true);
+        menu.SetActive(false);
+    }
+
+    public void CreditsBackButton()
+    {
+        credits.SetActive(false);
+        menu.SetActive(true);
     }
 }

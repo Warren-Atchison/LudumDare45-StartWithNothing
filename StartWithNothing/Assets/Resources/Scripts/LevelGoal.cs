@@ -12,7 +12,12 @@ public class LevelGoal : MonoBehaviour
             SceneHandler sceneHandler = GameObject.Find("SceneHandler").GetComponent<SceneHandler>();
             int newScene = sceneHandler.levels.IndexOf(SceneManager.GetActiveScene().name) + 1;
 
-            Debug.Log("attempting to load " + sceneHandler.levels[newScene]);
+            if (newScene == sceneHandler.levels.Count)
+            {
+                sceneHandler.ChangeScenes(sceneHandler.levels[0]);
+                sceneHandler.deathCounter.SetActive(false);
+                return;
+            }
 
             sceneHandler.ChangeScenes(sceneHandler.levels[newScene]);
         }

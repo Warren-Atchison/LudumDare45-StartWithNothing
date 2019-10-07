@@ -182,7 +182,6 @@ public class LevelSelectMenu : MonoBehaviour
     public void TopRightLevel()
     {
         int selectedLevel = (pageNumber * 4) - 2;
-        Debug.Log(pageNumber * 4 + " + (" + (pageNumber % 4) + ") - " + 3 + " = " + selectedLevel);
 
         for (int i = 0; i < levelsWithKeys.Count; i++)
             if (levelsWithKeys[i] < selectedLevel)
