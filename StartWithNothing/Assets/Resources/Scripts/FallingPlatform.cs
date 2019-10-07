@@ -30,7 +30,7 @@ public class FallingPlatform : MonoBehaviour
         // Dropping
         // Allows platform to move
         platform.constraints = RigidbodyConstraints2D.None;
-        platform.gravityScale = 4;
+        platform.gravityScale *= 2;
         yield return null;
     }
 }
