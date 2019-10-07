@@ -850,6 +850,11 @@ PrefabInstance:
       propertyPath: DelayBetweenMoves
       value: 1e+12
       objectReference: {fileID: 0}
+    - target: {fileID: 6808368905035125124, guid: 7bd2831cc39da124fb229b0aa4c58186,
+        type: 3}
+      propertyPath: NewY
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6858338416719446805, guid: 7bd2831cc39da124fb229b0aa4c58186,
         type: 3}
       propertyPath: m_Size.x
