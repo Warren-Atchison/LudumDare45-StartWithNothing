@@ -113,6 +113,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die(string clipString = "Death")
     {
+        SceneHandler.deaths++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         rb.velocity = Vector2.zero;
         ac.Play(clipString);

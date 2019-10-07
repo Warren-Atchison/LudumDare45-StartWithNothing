@@ -120,9 +120,6 @@ public class LevelSelectMenu : MonoBehaviour
             return;
         }
 
-        Debug.Log("levelNum = " + levelNum);
-        Debug.Log("levelNum%4 = " + levelNum % 4);
-
         // Topleft
         if (levelNum % 4 == 0)
         {

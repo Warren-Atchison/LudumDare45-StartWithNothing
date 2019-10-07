@@ -120,6 +120,147 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &23333435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 23333439}
+  - component: {fileID: 23333438}
+  - component: {fileID: 23333437}
+  - component: {fileID: 23333436}
+  - component: {fileID: 23333441}
+  - component: {fileID: 23333440}
+  m_Layer: 5
+  m_Name: DeathCounter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &23333436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23333435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &23333437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23333435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &23333438
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23333435}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &23333439
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23333435}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 1096163366}
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &23333440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23333435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 2
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 0
+  m_Text: 'XXX    '
+--- !u!222 &23333441
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23333435}
+  m_CullTransparentMesh: 0
 --- !u!1 &45421192
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +316,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bd0e762f30d336549aaa61ec58e160b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c65490f0df373df44954306bd8b4d652, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -789,10 +930,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b7144b21c2e1842879039f9cb43bd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelsWithKeys: 0100000005000000
+  levelsWithKeys: 01000000050000000b0000000d000000
   keysForLevels:
   - A
   - D
+  - GroundJump
+  - Swim
   topLeftButton: {fileID: 1361263637}
   topRightButton: {fileID: 1038212291}
   bottomLeftButton: {fileID: 1958877328}
@@ -934,6 +1077,12 @@ MonoBehaviour:
   - Level7
   - Level8
   - Level9
+  - Level10
+  - Level11
+  - Level12
+  - Level13
+  - Level14
+  deathCounter: {fileID: 23333435}
 --- !u!1 &295868093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,8 +1786,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b7144b21c2e1842879039f9cb43bd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelsWithKeys: 
-  keysForLevels: []
+  levelsWithKeys: 01000000050000000b0000000d000000
+  keysForLevels:
+  - A
+  - D
+  - GroundJump
+  - Swim
   topLeftButton: {fileID: 1361263637}
   topRightButton: {fileID: 1038212291}
   bottomLeftButton: {fileID: 1958877328}
@@ -1958,12 +2111,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b185b04f0f439f74aa4d439198303fc8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a017858552c11d468857b99ef47a240, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2478,8 +2631,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b7144b21c2e1842879039f9cb43bd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelsWithKeys: 
-  keysForLevels: []
+  levelsWithKeys: 01000000050000000b0000000d000000
+  keysForLevels:
+  - A
+  - D
+  - GroundJump
+  - Swim
   topLeftButton: {fileID: 1361263637}
   topRightButton: {fileID: 1038212291}
   bottomLeftButton: {fileID: 1958877328}
@@ -2727,18 +2884,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b7144b21c2e1842879039f9cb43bd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelsWithKeys: 0100000005000000
+  levelsWithKeys: 01000000050000000b0000000d000000
   keysForLevels:
   - A
   - D
+  - GroundJump
+  - Swim
   topLeftButton: {fileID: 1361263637}
   topRightButton: {fileID: 1038212291}
   bottomLeftButton: {fileID: 1958877328}
   bottomRightButton: {fileID: 1552378760}
-  topLeftBlack: {fileID: 0}
-  topRightBlack: {fileID: 0}
-  bottomLeftBlack: {fileID: 0}
-  bottomRightBlack: {fileID: 0}
+  topLeftBlack: {fileID: 1768417720}
+  topRightBlack: {fileID: 639558435}
+  bottomLeftBlack: {fileID: 365779685}
+  bottomRightBlack: {fileID: 2036026487}
   leftArrow: {fileID: 434244677}
   rightArrow: {fileID: 852496971}
 --- !u!1 &1041512946
@@ -2807,6 +2966,83 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1096163365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1096163366}
+  - component: {fileID: 1096163368}
+  - component: {fileID: 1096163367}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1096163366
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096163365}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 23333439}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 370, y: 284}
+  m_SizeDelta: {x: 187.72, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1096163367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096163365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Death Counter: '
+--- !u!222 &1096163368
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096163365}
+  m_CullTransparentMesh: 0
 --- !u!1 &1214101269
 GameObject:
   m_ObjectHideFlags: 0
@@ -3260,18 +3496,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b7144b21c2e1842879039f9cb43bd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelsWithKeys: 0100000005000000
+  levelsWithKeys: 01000000050000000b0000000d000000
   keysForLevels:
   - A
   - D
+  - GroundJump
+  - Swim
   topLeftButton: {fileID: 1361263637}
   topRightButton: {fileID: 1038212291}
   bottomLeftButton: {fileID: 1958877328}
   bottomRightButton: {fileID: 1552378760}
-  topLeftBlack: {fileID: 0}
-  topRightBlack: {fileID: 0}
-  bottomLeftBlack: {fileID: 0}
-  bottomRightBlack: {fileID: 0}
+  topLeftBlack: {fileID: 1768417720}
+  topRightBlack: {fileID: 639558435}
+  bottomLeftBlack: {fileID: 365779685}
+  bottomRightBlack: {fileID: 2036026487}
   leftArrow: {fileID: 434244677}
   rightArrow: {fileID: 852496971}
 --- !u!1 &1406262432
@@ -3635,18 +3873,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b7144b21c2e1842879039f9cb43bd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelsWithKeys: 0100000005000000
+  levelsWithKeys: 01000000050000000b0000000d000000
   keysForLevels:
   - A
   - D
+  - GroundJump
+  - Swim
   topLeftButton: {fileID: 1361263637}
   topRightButton: {fileID: 1038212291}
   bottomLeftButton: {fileID: 1958877328}
   bottomRightButton: {fileID: 1552378760}
-  topLeftBlack: {fileID: 0}
-  topRightBlack: {fileID: 0}
-  bottomLeftBlack: {fileID: 0}
-  bottomRightBlack: {fileID: 0}
+  topLeftBlack: {fileID: 1768417720}
+  topRightBlack: {fileID: 639558435}
+  bottomLeftBlack: {fileID: 365779685}
+  bottomRightBlack: {fileID: 2036026487}
   leftArrow: {fileID: 434244677}
   rightArrow: {fileID: 852496971}
 --- !u!1 &1582422542
@@ -4713,18 +4953,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b7144b21c2e1842879039f9cb43bd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelsWithKeys: 0100000005000000
+  levelsWithKeys: 01000000050000000b0000000d000000
   keysForLevels:
   - A
   - D
+  - GroundJump
+  - Swim
   topLeftButton: {fileID: 1361263637}
   topRightButton: {fileID: 1038212291}
   bottomLeftButton: {fileID: 1958877328}
   bottomRightButton: {fileID: 1552378760}
-  topLeftBlack: {fileID: 0}
-  topRightBlack: {fileID: 0}
-  bottomLeftBlack: {fileID: 0}
-  bottomRightBlack: {fileID: 0}
+  topLeftBlack: {fileID: 1768417720}
+  topRightBlack: {fileID: 639558435}
+  bottomLeftBlack: {fileID: 365779685}
+  bottomRightBlack: {fileID: 2036026487}
   leftArrow: {fileID: 434244677}
   rightArrow: {fileID: 852496971}
 --- !u!1 &1960170407
@@ -5300,7 +5542,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ec8014edc225ae3438e338d6b8e23ebc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 90eb94c04731b2c45b5ff879013eaa71, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
