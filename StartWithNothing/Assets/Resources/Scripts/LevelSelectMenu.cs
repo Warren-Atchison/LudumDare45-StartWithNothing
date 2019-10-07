@@ -57,7 +57,7 @@ public class LevelSelectMenu : MonoBehaviour
     {
         pageNumber++;
 
-        if (pageNumber * 4 >= levelPics.Length - 1)
+        if (pageNumber * 4 > levelPics.Length - 1)
             rightArrow.SetActive(false);
 
         if (!leftArrow.activeInHierarchy)
