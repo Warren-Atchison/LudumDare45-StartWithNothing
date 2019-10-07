@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FallingPlatform : MonoBehaviour
 {
+    public int shakeTime = 1;
+    public float shakeDegree = 1f;
     private GameObject player;
     void Start(){
         player=GameObject.Find("Player");
@@ -19,12 +21,12 @@ public class FallingPlatform : MonoBehaviour
         // Preventing the platform from moving upon collision
         platform.constraints = RigidbodyConstraints2D.FreezeAll;
 
-        // Shaking; duration is WaitForSeconds arg * 2 * max size of i seconds
-        for(int i = 0; i < 50; i++){
+        // Shaking; duration is WaitForSeconds arg * 2 * time
+        for(int i = 0; i < ((shakeTime)*100)/2; i++){
             yield return new WaitForSeconds(.01f);
-            platform.rotation = 1f;
+            platform.rotation = shakeDegree;
             yield return new WaitForSeconds(.01f);
-            platform.rotation = -1f;
+            platform.rotation = -shakeDegree;
         }
         
         // Dropping
