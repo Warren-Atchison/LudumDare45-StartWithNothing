@@ -46,9 +46,14 @@ public class Water : MonoBehaviour
     } 
 
     private void OnTriggerExit2D(Collider2D collision){
-        pc.inWater = false;
-        rb.gravityScale = 2;
-        pc.jumpPower = defaultJumpPower;
-        pc.moveSpeed = defaultMoveSpeed;
+        if(collision.gameObject.name.Equals("Player")){
+            pc.inWater = false;
+            rb.gravityScale = 2;
+            pc.jumpPower = defaultJumpPower;
+            pc.moveSpeed = defaultMoveSpeed;
+        }
+        else{
+            collision.GetComponent<Rigidbody2D>().gravityScale = 2f;
+        }
     }
 }
