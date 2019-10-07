@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 933306341027230764}
   - component: {fileID: 3998422426418542015}
-  - component: {fileID: 3920821778317766935}
   - component: {fileID: -9114755429294650439}
+  - component: {fileID: -294247972654734879}
   m_Layer: 0
   m_Name: Air_Jump
   m_TagString: Untagged
@@ -82,18 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3920821778317766935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6345161159119344831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aa9938beaef9bb41a0eed2d1861d463, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &-9114755429294650439
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -120,3 +108,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-294247972654734879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6345161159119344831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 901462ac215c47b4598e08ea3b368815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyName: AirJump
+  keyCode: 32
