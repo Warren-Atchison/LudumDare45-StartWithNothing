@@ -1601,6 +1601,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button
       objectReference: {fileID: 0}
+    - target: {fileID: 2628107670544448756, guid: 2bf6b8f94a1e0634495975ad6767bf96,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2628107670544448753, guid: 2bf6b8f94a1e0634495975ad6767bf96,
         type: 3}
       propertyPath: m_LocalPosition.x
