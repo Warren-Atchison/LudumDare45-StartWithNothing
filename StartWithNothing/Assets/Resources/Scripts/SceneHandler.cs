@@ -28,7 +28,7 @@ public class SceneHandler : MonoBehaviour
 
     private void Update()
     {
-        deathCounter.GetComponent<Text>().text = deaths.ToString() + "    ";
+        deathCounter.GetComponent<Text>().text = "Death Counter: " + deaths.ToString() + "    ";
     }
 
     public void ChangeScenes(string newScene)
