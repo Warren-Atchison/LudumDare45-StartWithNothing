@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 815951307489179862}
   - component: {fileID: 815951307489179865}
   - component: {fileID: 815951307489179864}
-  - component: {fileID: 815951307489179867}
+  - component: {fileID: -5720233211565052967}
   m_Layer: 0
   m_Name: Swim
   m_TagString: Untagged
@@ -108,7 +108,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &815951307489179867
+--- !u!114 &-5720233211565052967
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,6 +117,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 815951307489179866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b936b00f22e91b438e787827df4b5b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 901462ac215c47b4598e08ea3b368815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyName: Swim
+  keyCode: 32

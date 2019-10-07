@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8151691474037614237}
   - component: {fileID: 8151691474037614236}
   - component: {fileID: 8151691474037614239}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,6 +145,8 @@ MonoBehaviour:
   moveSpeed: 5
   jumpPower: 8
   isGrounded: 0
+  inWater: 0
+  airJumpCharges: 1
   groundLayers:
     serializedVersion: 2
     m_Bits: 256
