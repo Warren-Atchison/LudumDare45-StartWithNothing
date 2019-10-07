@@ -98,11 +98,11 @@ public class PlayerController : MonoBehaviour
         if (!unlockedKeys.ContainsKey("GroundJump"))
             unlockedKeys.Add("GroundJump", KeyCode.Space);
 
-        if (!unlockedKeys.ContainsKey("AirJump"))
-            unlockedKeys.Add("AirJump", KeyCode.Space);
+        // if (!unlockedKeys.ContainsKey("AirJump"))
+        //     unlockedKeys.Add("AirJump", KeyCode.Space);
 
-        if (!unlockedKeys.ContainsKey("Swim"))
-            unlockedKeys.Add("Swim", KeyCode.Space);
+        // if (!unlockedKeys.ContainsKey("Swim"))
+        //     unlockedKeys.Add("Swim", KeyCode.Space);
 
         if (!unlockedKeys.ContainsKey("A"))
             unlockedKeys.Add("A", KeyCode.A);

@@ -7,15 +7,11 @@ public class LowGrav : MonoBehaviour
     private GameObject player;
     private Rigidbody2D rb;
 
-    void Start(){
-        player = GameObject.Find("Player");
-        rb = player.GetComponent<Rigidbody2D>();
-    }
     private void OnTriggerEnter2D(Collider2D collision){
-        rb.gravityScale = .5f;
+        collision.GetComponent<Rigidbody2D>().gravityScale /= 2;
     }
 
     private void OnTriggerExit2D(Collider2D collision){
-        rb.gravityScale = 2;
+        collision.GetComponent<Rigidbody2D>().gravityScale = .5f;
     }
 }
