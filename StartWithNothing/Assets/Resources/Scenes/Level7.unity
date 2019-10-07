@@ -836,12 +836,12 @@ PrefabInstance:
     - target: {fileID: 5735010677088704597, guid: 76e503f779dfd934a999f5f5a8336aa8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.37
+      value: -2.45
       objectReference: {fileID: 0}
     - target: {fileID: 5735010677088704597, guid: 76e503f779dfd934a999f5f5a8336aa8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.2
+      value: -3.331
       objectReference: {fileID: 0}
     - target: {fileID: 5735010677088704597, guid: 76e503f779dfd934a999f5f5a8336aa8,
         type: 3}
@@ -891,7 +891,7 @@ PrefabInstance:
     - target: {fileID: 5735010677088704597, guid: 76e503f779dfd934a999f5f5a8336aa8,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.25772098
+      value: 0.12112886
       objectReference: {fileID: 0}
     - target: {fileID: 5735010677088704592, guid: 76e503f779dfd934a999f5f5a8336aa8,
         type: 3}
@@ -1759,7 +1759,7 @@ PrefabInstance:
     - target: {fileID: 2628107670544448753, guid: 2bf6b8f94a1e0634495975ad6767bf96,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.775594
+      value: -2.682
       objectReference: {fileID: 0}
     - target: {fileID: 2628107670544448753, guid: 2bf6b8f94a1e0634495975ad6767bf96,
         type: 3}
@@ -2352,21 +2352,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5735010677088704592, guid: 76e503f779dfd934a999f5f5a8336aa8,
-        type: 3}
-      propertyPath: exitDirection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5735010677088704592, guid: 76e503f779dfd934a999f5f5a8336aa8,
-        type: 3}
-      propertyPath: screenWrap
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5735010677088704592, guid: 76e503f779dfd934a999f5f5a8336aa8,
-        type: 3}
-      propertyPath: teleportDestination
-      value: 
-      objectReference: {fileID: 1850276830}
     - target: {fileID: 5735010677088704598, guid: 76e503f779dfd934a999f5f5a8336aa8,
         type: 3}
       propertyPath: m_Color.r
@@ -2382,6 +2367,21 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.664592
       objectReference: {fileID: 0}
+    - target: {fileID: 5735010677088704592, guid: 76e503f779dfd934a999f5f5a8336aa8,
+        type: 3}
+      propertyPath: exitDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735010677088704592, guid: 76e503f779dfd934a999f5f5a8336aa8,
+        type: 3}
+      propertyPath: screenWrap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735010677088704592, guid: 76e503f779dfd934a999f5f5a8336aa8,
+        type: 3}
+      propertyPath: teleportDestination
+      value: 
+      objectReference: {fileID: 1850276830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76e503f779dfd934a999f5f5a8336aa8, type: 3}
 --- !u!1 &969363537 stripped
@@ -5205,21 +5205,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5735010677088704592, guid: 76e503f779dfd934a999f5f5a8336aa8,
-        type: 3}
-      propertyPath: exitDirection
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5735010677088704592, guid: 76e503f779dfd934a999f5f5a8336aa8,
-        type: 3}
-      propertyPath: screenWrap
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5735010677088704592, guid: 76e503f779dfd934a999f5f5a8336aa8,
-        type: 3}
-      propertyPath: teleportDestination
-      value: 
-      objectReference: {fileID: 969363537}
     - target: {fileID: 5735010677088704598, guid: 76e503f779dfd934a999f5f5a8336aa8,
         type: 3}
       propertyPath: m_Color.r
@@ -5235,6 +5220,21 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.664592
       objectReference: {fileID: 0}
+    - target: {fileID: 5735010677088704592, guid: 76e503f779dfd934a999f5f5a8336aa8,
+        type: 3}
+      propertyPath: exitDirection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735010677088704592, guid: 76e503f779dfd934a999f5f5a8336aa8,
+        type: 3}
+      propertyPath: screenWrap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735010677088704592, guid: 76e503f779dfd934a999f5f5a8336aa8,
+        type: 3}
+      propertyPath: teleportDestination
+      value: 
+      objectReference: {fileID: 969363537}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76e503f779dfd934a999f5f5a8336aa8, type: 3}
 --- !u!1 &1850276830 stripped
