@@ -1,3 +1,3 @@
 # LudumDare45-StartWithNothing
 
-Garrett Test
+Download zip, extract, run exe to play.
